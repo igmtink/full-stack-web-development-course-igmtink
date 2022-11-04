@@ -33,7 +33,6 @@ sampleStringCase.toUpperCase();
 sampleStringCase.toLowerCase();
 
 // TODO: Capitalise the first letter of their name using only (Slice, Length, String Concatenation)
-
 // Breakdown the problems
 
 // 1. Create a var that stores the name that user enters via prompt.
