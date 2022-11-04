@@ -1,28 +1,11 @@
-// Alert
-alert("Hello World!");
-
-// Alert with input (Prompt)
-prompt("What is your name?");
-
-// Data Types
-true / false; // Boolean
-12345; // Numbers
-("Text"); // String
-
-// To know what data types your variable/code
-typeof "String";
-
-// Variable
-var myName = "Ivan";
-
-// String Concatenation (Combining Strings)
+// !String Concatenation (Combining Strings)
 var stringSample = "My name is" + " " + "Ivan";
 
-// Getting string count (length)
+// !Getting string count (length)
 var name = "Ivan";
 name.length;
 
-// Characters Counter
+// !Characters Counter
 var limitCharacter = 280;
 var characterCount = prompt("Type anything.");
 
@@ -36,23 +19,18 @@ alert(
     " characters left."
 );
 
-// String Slicing
+// !String Slicing
 // It will slice from (0) position to (3) position
 var sampleSlicing = "Slice";
 sampleSlicing.slice(0, 3);
 
-// Short hands of (Alert, Prompt, Slice)
+// !Short hands of (Alert, Prompt, Slice)
 alert(prompt("Compose your message:").slice(0, 140));
 
-// String UpperCase / LowerCase
+// !String UpperCase / LowerCase
 var sampleStringCase = "Ivan Gregor Tabalno";
 sampleStringCase.toUpperCase();
 sampleStringCase.toLowerCase();
-
-// Reassign Variable
-var sampleReassignVar = "Gregor";
-sampleReassignVar = sampleReassignVar.toUpperCase();
-sampleReassignVar = sampleReassignVar.toLowerCase();
 
 // TODO: Capitalise the first letter of their name using only (Slice, Length, String Concatenation)
 
