@@ -19,11 +19,6 @@ var oddNumber = 45 % 2; // If the remainder is not 0 it means it's odd number
 // First we use addition before multiplication, because it have a (parentheses)
 var pemdas = (3 + 5) * 2;
 
-// TODO: PEMDAS FORMULA
-var dogAge = prompt("What is your dog age?");
-var humanAge = (dogAge - 2) * 4 + 21;
-alert("Your dog is " + humanAge + " years old in human years.");
-
 // !Increment and Decrement Expressions
 var sampleIncrementandDecrement = 5;
 sampleIncrementandDecrement += 2; // 7

@@ -30,11 +30,3 @@ function calcChange(startingMoney, costPerBottle) {
 }
 
 console.log("Hello sir, here is your " + getMilk(5, 1.5) + " change.");
-
-// TODO: BMI Calculator
-function bmiCalculator(weight, height) {
-  return Math.round(weight / (height * height));
-}
-
-var bmi = bmiCalculator(65, 1.8);
-console.log(bmi);
