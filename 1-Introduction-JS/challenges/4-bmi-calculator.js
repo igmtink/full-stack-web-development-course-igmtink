@@ -1,4 +1,4 @@
-// TODO: BMI Calculator
+// TODO: BMI Calculator - Basic
 function bmiCalculator(weight, height) {
   return Math.round(weight / (height * height));
 }

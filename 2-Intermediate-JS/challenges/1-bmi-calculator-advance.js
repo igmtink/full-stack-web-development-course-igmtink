@@ -1,4 +1,4 @@
-// TODO: BMI Calculator (Advance)
+// TODO: BMI Calculator - Advance using if else statement
 function bmiCalculator(weight, height) {
   var bmi = Math.round(weight / (height * height));
 
