@@ -1,0 +1,99 @@
+body {
+  background-color: #1b1b1b;
+  color: #fff;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+}
+
+.container {
+  display: grid;
+  gap: 5rem;
+}
+
+h1 {
+  font-size: 9rem;
+  text-shadow: -2px 2px #ff008c;
+  text-align: center;
+  /* background-color: blue; */
+}
+
+.drums {
+  /* background-color: red; */
+  display: flex;
+  justify-content: center;
+  gap: 10rem;
+}
+
+.drums > div > button {
+  /* background-color: red; */
+  background-color: #fff;
+  height: 150px;
+  width: 150px;
+  font-size: 4rem;
+  color: #ff008c;
+  text-shadow: -2px 2px #fff;
+  font-weight: bold;
+  border-radius: 10px;
+  border: 10px solid #ff008c;
+  box-shadow: -2px 2px #fff;
+}
+
+.left-key {
+  display: flex;
+  gap: 1rem;
+}
+
+.right-key {
+  display: flex;
+  gap: 1rem;
+}
+
+.w {
+  background-image: url(./images/tom1.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.a {
+  background-image: url(./images/tom2.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.s {
+  background-image: url(./images/tom3.png);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.d {
+  background-image: url(./images/tom4.png);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.j {
+  background-image: url(./images/snare.png);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.k {
+  background-image: url(./images/crash.png);
+  /* background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; */
+}
+
+.l {
+  background-image: url(./images/kick.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
