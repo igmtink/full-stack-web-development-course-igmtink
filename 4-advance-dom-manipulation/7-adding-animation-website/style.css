@@ -1,0 +1,46 @@
+body {
+  background-color: #1b1b1b;
+  color: #fff;
+  display: grid;
+  place-items: center;
+  height: 100vh;
+}
+
+.btn-container {
+  display: grid;
+  justify-items: center;
+  gap: 1rem;
+}
+
+button {
+  text-align: center;
+  height: 150px;
+  width: 150px;
+  font-weight: bold;
+  font-size: 4rem;
+  background-color: #fff;
+  color: black;
+  text-shadow: -2px 2px rgb(255, 0, 85);
+  border: 5px solid rgb(255, 0, 85);
+  border-radius: 10px;
+}
+
+/* !This is only apply in click button not on keypress on keyboard */
+/* button:active {
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+} */
+
+.w-btn {
+  /* background-color: red; */
+}
+
+.asd-btn {
+  display: flex;
+  gap: 1rem;
+}
+
+.pressed {
+  box-shadow: 0 3px 4px 0 #dbedf3;
+  opacity: 0.5;
+}
