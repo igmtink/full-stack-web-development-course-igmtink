@@ -5,6 +5,13 @@ body {
   background-color: #1b1b1b;
 }
 
+a {
+  color: red;
+  font-size: 4rem;
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
 .container {
   display: grid;
   gap: 1rem;
