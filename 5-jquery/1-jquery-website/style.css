@@ -1,0 +1,33 @@
+body {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+  background-color: #1b1b1b;
+}
+
+.container {
+  display: grid;
+  gap: 1rem;
+  justify-items: center;
+}
+
+h1 {
+  color: red;
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.btn-container {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-container > button {
+  color: #533b05;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+  background-color: #e6ca30;
+  border-radius: 5px;
+  border: 1px solid #b1a063;
+}
