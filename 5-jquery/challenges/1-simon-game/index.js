@@ -98,5 +98,26 @@ function checkAnswer(currentLevel) {
     }
   } else {
     console.log("Wrong");
+
+    $("h1").text("Game Over, Press Any Key to Restart");
+
+    // Play the sound effect of that button
+    var audio = new Audio("./sounds/wrong.mp3");
+    audio.play();
+
+    $("body").addClass("game-over");
+
+    setTimeout(function () {
+      $("body").removeClass("game-over");
+    }, 1000);
+
+    startOver();
   }
+}
+
+// !Reset all value for new game
+function startOver() {
+  gamePattern = [];
+  start = false;
+  level = 0;
 }
