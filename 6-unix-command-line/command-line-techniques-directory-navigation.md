@@ -40,6 +40,12 @@ start // name
 start code // name
 ```
 
+<!-- !To open the project folder inside vscode -->
+
+```bash
+code . // be sure that you already inside your project directory
+```
+
 <!-- !Remove file -->
 
 ```bash
