@@ -16,7 +16,7 @@ cd // name
 ctrl + U
 ```
 
-<!-- !Make directory -->
+<!-- !Make Directory -->
 
 ```bash
 mkdir // name
@@ -58,8 +58,26 @@ rm *
 rm -r // name
 ```
 
-<!-- !Current directory / location -->
+<!-- !Print Working Directory -->
 
 ```bash
 pwd
+```
+
+<!-- !Run javascript file using node -->
+
+```bash
+node // name.js
+```
+
+<!-- !Run code editor on cli using node -->
+
+```bash
+node
+```
+
+<!-- !To exit node code editor -->
+
+```node
+.exit / ctrl + c (x2)
 ```
