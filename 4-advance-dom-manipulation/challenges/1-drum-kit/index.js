@@ -1,6 +1,5 @@
 // !Button Event Listener
 var numberOfDrumsButton = document.querySelectorAll(".drum");
-
 for (var i = 0; i < numberOfDrumsButton.length; i++) {
   numberOfDrumsButton[i].addEventListener("click", function () {
     // !(this.innerHTML) is getting the value/text of that element clicked
