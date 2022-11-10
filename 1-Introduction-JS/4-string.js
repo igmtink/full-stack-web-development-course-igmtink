@@ -31,3 +31,7 @@ alert(prompt("Compose your message:").slice(0, 140));
 var sampleStringCase = "Ivan Gregor Tabalno";
 sampleStringCase.toUpperCase();
 sampleStringCase.toLowerCase();
+
+// !Template Literals
+// This is string combination with text and variable
+var sampleTemplateLiterals = `First Name: ${name}`;
