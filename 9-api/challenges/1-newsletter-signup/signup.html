@@ -17,12 +17,19 @@
   <body>
     <main>
       <h1>Subscribe to My Newsletter</h1>
-      <form action="/">
+      <form action="/" method="POST">
         <div class="information">
           <input
             type="text"
-            name="Full Name"
-            placeholder="Full Name"
+            name="fName"
+            placeholder="First Name"
+            required
+            autofocus
+          />
+          <input
+            type="text"
+            name="lName"
+            placeholder="Last Name"
             required
             autofocus
           />
