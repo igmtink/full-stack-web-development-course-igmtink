@@ -9,20 +9,20 @@ body {
 main {
   display: grid;
   grid-template-columns: repeat(1, minmax(300px, 1fr));
-  gap: 2rem;
+  gap: 1rem;
 }
 
 h1 {
   text-align: center;
   color: #ffdb58;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.375rem;
 }
 
 form {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 1.5rem;
+  gap: 1rem;
 }
 
 .information {
