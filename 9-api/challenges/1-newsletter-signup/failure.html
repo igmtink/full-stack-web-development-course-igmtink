@@ -5,9 +5,26 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Failed</title>
+    <title>Failure</title>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/igmtink/igmt-css/css/igmtink-css-reset.min.css"
+    />
+    <link rel="stylesheet" href="css/failure.css" />
   </head>
   <body>
-    <h1>Failed to subscribe!</h1>
+    <main>
+      <div>
+        <h1>Uh oh!</h1>
+        <p>
+          There was a problem signing you up. Please try again or contact the
+          developer.
+        </p>
+      </div>
+      <form action="/failure" method="post">
+        <button type="submit">Try again</button>
+      </form>
+    </main>
   </body>
 </html>

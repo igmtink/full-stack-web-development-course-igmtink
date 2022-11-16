@@ -64,6 +64,11 @@ app.post("/", function (req, res) {
   run();
 });
 
+app.post("/failure", function (req, res) {
+  // !Back to the homepage
+  res.redirect("/");
+});
+
 app.listen(port, function () {
   console.log(`Server is running at port: ${port}`);
 });

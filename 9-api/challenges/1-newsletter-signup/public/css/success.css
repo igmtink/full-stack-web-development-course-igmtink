@@ -1,0 +1,21 @@
+body {
+  display: grid;
+  background-color: #1b1b1b;
+  height: 100vh;
+  place-items: center;
+  color: #fff;
+  text-align: center;
+}
+
+main {
+  width: min(640px, 100% - 1rem);
+  display: grid;
+  gap: 0.5rem;
+}
+
+h1 {
+  font-size: 2.25rem; /* 36px */
+  line-height: 2.5rem; /* 40px */
+  color: #ffdb58;
+  font-weight: bold;
+}
