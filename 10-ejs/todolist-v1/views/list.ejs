@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='x-ua-compatible' content='ie=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+    <title>Todolist</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/igmtink/igmt-css/css/igmtink-css-reset.min.css">
+    <link rel='stylesheet' href='./css/style.css' />
+  </head>
+  <body>
+    <main>
+      <div>
+        <h1><%= kindOfDay %></h1>
+
+        <div class="todoContainer">
+          <ul>
+
+            <!-- For loop to add new (list element) -->
+            <% for (let i=0; i<newListItems.length; i++){ %>
+              <div>
+                <input type="checkbox">
+                <p><%= newListItems[i] %></p>
+              </div>
+            
+            <% } %>
+
+          </ul>
+
+          <form action="/" method="post">
+            <input type="text" name="newItem" placeholder="Todo">
+            <button type="submit" name="btnAdd">Add</button>
+          </form>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
