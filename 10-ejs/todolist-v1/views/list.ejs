@@ -1,19 +1,7 @@
-<!doctype html>
-<html lang='en'>
-  <head>
-    <meta charset='utf-8' />
-    <meta http-equiv='x-ua-compatible' content='ie=edge' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-
-    <title>Todolist</title>
-
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/igmtink/igmt-css/css/igmtink-css-reset.min.css">
-    <link rel='stylesheet' href='./css/style.css' />
-  </head>
-  <body>
+<%- include('header'); -%>
     <main>
       <div>
-        <h1><%= kindOfDay %></h1>
+        <h1><%= listTitle %></h1>
 
         <div class="todoContainer">
           <ul>
@@ -30,11 +18,10 @@
           </ul>
 
           <form action="/" method="post">
-            <input type="text" name="newItem" placeholder="Todo">
-            <button type="submit" name="btnAdd">Add</button>
+            <input type="text" name="newItem" placeholder="Todo" required>
+            <button type="submit" name="list" value="<%= listTitle %>">Add</button>
           </form>
         </div>
       </div>
     </main>
-  </body>
-</html>
+<%- include('footer'); -%>
