@@ -25,6 +25,18 @@ body {
   margin-inline: auto;
 }
 
+.post-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.post-description {
+  font-family: serif;
+  color: grey;
+  word-wrap: break-word;
+}
+
 /* !HEADER */
 .header-nav {
   position: fixed;
@@ -171,15 +183,15 @@ nav > .header-navList {
   border-radius: 0.75rem;
 }
 
-.post-container > h1 {
-  font-size: 1.5rem;
-  font-weight: bold;
-  border-bottom: 1px solid #e5e5e5;
+/* POST */
+.post {
+  display: grid;
+  margin-top: 6.75rem;
 }
 
-.post-container > pre {
-  font-family: serif;
-  color: grey;
+.post > div {
+  display: grid;
+  gap: 1.75rem;
 }
 
 /* COMPOSE */

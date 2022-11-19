@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title><%= postTitle %></title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/igmtink/igmt-css/css/igmtink-css-reset.min.css">
+    <!-- !You need to back another folder to get the (style.css)  -->
+    <link rel="stylesheet" href="/css/style.css">
+  </head>
+  <body>
+    <%- include('partials/header'); -%>
+
+    <main>
+      <section class="post container-flex">
+        <div>
+          <h1 class="post-title"><%= postTitle %></h1>
+          <pre class="post-description"><%= postDescription %></pre>  
+        </div>
+      </section>
+    </main>      
+
+    <%- include('partials/footer'); -%>
+  </body>
+</html>
