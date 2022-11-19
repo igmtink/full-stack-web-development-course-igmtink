@@ -18,13 +18,13 @@
         <ul>
 
           <!-- For loop to add new (list element) -->
-          <% for (let i=0; i<status.length; i++){ %>
+          <% status.forEach(function(status){ %>
             <list class="post-container">
-              <h1><%= status[i].title %></h1>
-              <pre><%= status[i].description %></pre>
+              <h1><%= status.title %></h1>
+              <pre><%= status.description %></pre>
             </list>
             
-          <% } %>
+          <% }); %>
 
         </ul>
       </section>
