@@ -45,7 +45,7 @@ app.post("/compose", function (req, res) {
 });
 
 app.get("/post/:topic", function (req, res) {
-  // !Using (lodash) we can control our string this is will convert the capitalize into lowercase and also it will ignore the symbol like hypen (-)
+  // !Using (lodash) we can control our string this is will convert the capitalize into lowercase and also it will ignore the symbol like hypen or space (-, )
   const requestTitle = _.lowerCase(req.params.topic);
 
   // !For loop to check if the url title is in post title array

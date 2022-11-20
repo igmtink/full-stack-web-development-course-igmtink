@@ -19,9 +19,13 @@
 
           <!-- For loop to add new (list element) -->
           <% status.forEach(function(status){ %>
-            <list class="post-container">
-              <h1 class="post-title"><%= status.title %></h1>
-              <pre class="post-description"><%= status.description %></pre>
+            <list>
+            <a class="post-container" href="/post/<%= status.title %>">
+                <h1 class="post-title"><%= status.title %></h1>
+              
+                 <!-- (substring) is to control the length of character where it display -->
+                <pre class="line-clamp post-description"><%= status.description.substring(0, 200) + " ..." %></pre>
+              </a>
             </list>
             
           <% }); %>
