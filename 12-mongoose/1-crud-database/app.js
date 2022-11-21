@@ -11,7 +11,7 @@ const testSchema = new mongoose.Schema({ name: String, rating: Number });
 // !Create new (Model / Collections) and passing (testSchema) for (Field and Value)
 const TestCollections = mongoose.model("TestCollections", testSchema);
 
-// !CREATE ONE (DOCUMENTS / DATABASE)
+// !CREATE SINGLE (DOCUMENTS / DATABASE)
 
 // !Create / Pass new (Documents / Database) in (Model / TestCollections)
 const test1 = new TestCollections({ name: "Test1", rating: 5 });
@@ -25,7 +25,8 @@ test1.save();
 const test2 = new TestCollections({ name: "Test2", rating: 3 });
 const test3 = new TestCollections({ name: "Test3", rating: 2 });
 
-// !Create many (Documents / Database) with (error handler) by (function())
+// !Specify your (Documents / Database) in array
+// !Error handler
 // !Comment out this code to not insert many (Documents / Database) again
 TestCollections.insertMany([test2, test3], function (err) {
   if (err) {
@@ -37,19 +38,55 @@ TestCollections.insertMany([test2, test3], function (err) {
 
 // !READ OPERATIONS
 
-// !Read all (Documents / Database) from (Model / TestCollections) with (error handler) and the output will be an array object
-TestCollections.find(function(err, testcollections) {
+// !READ ALL (DOCUMENTS / DATABASE)
+
+// !Error handler
+// !Put any name for your (Model / Collections) to get your (Documents / Database)
+TestCollections.find(function (err, testcollections) {
   if (err) {
     console.log(err);
   } else {
     console.log(testcollections);
 
     // !Log all only names from (TestCollections Documents) use (forEach)
-    testcollections.forEach(function(tests) {
-      console.log(tests.name)
-    })
+    testcollections.forEach(function (tests) {
+      console.log(tests.name);
+    });
 
     // !Close our mongodb
     mongoose.connection.close();
+  }
+});
+
+// !UPDATE OPERATIONS
+
+// !UPDATE SINGLE (DOCUMENTS / DATABASE)
+
+// !1. Specify the name or id (Test2) which one you will update
+// !2. Update or Add the (Field and Value)
+// !3. Error handler
+TestCollections.updateOne(
+  { name: "Test2" },
+  { review: "This is Test2!" },
+  function (err) {
+    if (err) {
+      console.log(err);
+    } else {
+      console.log("Succesfully updated the documents / database.");
+    }
+  }
+);
+
+// !DELETE OPERATIONS
+
+// !DELETE SINGLE (DOCUMENTS / DATABASE)
+
+// !Specify that you want to delete (Documents / Database) that has a (name: "Test2")
+// !Error handler
+TestCollections.deleteOne({ name: "Test2" }, function (err) {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log("Succesfully deleted the document");
   }
 });
