@@ -48,5 +48,8 @@ TestCollections.find(function(err, testcollections) {
     testcollections.forEach(function(tests) {
       console.log(tests.name)
     })
+
+    // !Close our mongodb
+    mongoose.connection.close();
   }
 });
