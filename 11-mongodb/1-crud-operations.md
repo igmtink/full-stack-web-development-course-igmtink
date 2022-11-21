@@ -1,7 +1,19 @@
+### Show all Database
+
+```mongosh
+show dbs
+```
+
 ### Create Database
 
 ```mongosh
 use shopDB
+```
+
+### Delete Database
+
+```mongosh
+db.dropDatabase()
 ```
 
 ### View Database
