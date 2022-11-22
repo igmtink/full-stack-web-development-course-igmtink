@@ -11,7 +11,7 @@
   <body>
     <main>
       <section class="container">
-        <h1>Date</h1>
+        <h1><%= today %></h1>
         <div class="todolist-container">
           <form action="/" method="post">
             <input type="text" name="todoInput" placeholder="Todo" required>
@@ -20,10 +20,18 @@
             </button>
           </form>
           <ul>
-            <li>
-              <input type="checkbox" name="todoCheckbox">
-              <span>Random Stuff</span>
-            </li>
+
+            <% todoList.forEach(function(todo) { %>
+                
+                <form action="/" method="post">
+                  <li>
+                    <input type="checkbox" name="todoCheckbox">
+                    <span><%= todo.name %></span>
+                  </li>
+                </form>
+
+            <% }) %>
+            
           </ul>
         </div>
       </section>
