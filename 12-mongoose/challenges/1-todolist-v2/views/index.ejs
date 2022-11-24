@@ -30,6 +30,7 @@
                     <!-- To sumbit (this.form) when (checkbox) is checked with a value -->
                     <input type="checkbox" name="checkedTodo" value="<%= todo._id %>" onChange="this.form.submit()">
                     <span><%= todo.name %></span>
+                    <input type="hidden" name="customListName" value="<%= listTitlet %>">
                   </li>
                 </form>
 

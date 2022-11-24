@@ -143,10 +143,26 @@ app.post("/delete", function (req, res) {
   // !To get our value (_id) in (input:check) from (html) body
   const checkedId = req.body.checkedTodo;
 
-  // !To delete a (Documents / Field and Value) by (_id)
-  Todolist.findByIdAndRemove(checkedId, function (err) {
-    res.redirect("/");
-  });
+  // !To get our custom list name in (input:hidden) from (html) body
+  const customList = req.body.customListName;
+
+  // !If custom list name is equal to (Todolist)
+  if (customList === "Todolist") {
+    // !To delete a (Documents / Field and Value) by (_id)
+    Todolist.findByIdAndRemove(checkedId, function (err) {
+      res.redirect("/");
+    });
+  } else {
+    // !Find custom list name in (Model / Collections) by ({name})
+    List.findOneAndUpdate(
+      { name: customList },
+      // !Remove and Update from array by using ($pull) from (mongodb)
+      { $pull: { item: { _id: checkedId } } },
+      function (err, result) {
+        res.redirect("/" + customList);
+      }
+    );
+  }
 });
 
 app.listen(port, function () {
