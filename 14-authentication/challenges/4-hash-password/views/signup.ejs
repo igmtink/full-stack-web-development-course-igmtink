@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv='x-ua-compatible' content='ie=edge' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+
+    <title>Secret Files</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/igmtink/igmt-css/css/igmtink-css-reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <main>
+      <section class="auth-container">
+        <div class="auth-box">
+          <h1>Sign up</h1>
+          <form action="/signup" method="post">
+            <div class="input-container">
+              <input type="text" name="fullname" placeholder="Full Name" required>
+              <input type="email" name="email" placeholder="yourname@example.com" required>
+              <input type="password" name="password" placeholder="Password" required>
+            </div>
+            <button>Sign up</button>
+            <div class="auth-secondary-box">
+              <span>Already have an account?</span>
+              <a href="/login">
+                Login
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(255, 255, 255, 1);transform: ;msFilter:;"><path d="M10.707 17.707 16.414 12l-5.707-5.707-1.414 1.414L13.586 12l-4.293 4.293z"></path></svg>
+              </a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
