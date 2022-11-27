@@ -5,6 +5,8 @@ const port = 3000;
 
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+// !Database (encryption / decryption)
+const encrypt = require("mongoose-encryption");
 
 mongoose.connect(process.env.MONGOOSE_SERVER);
 
@@ -13,6 +15,12 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String,
 });
+
+// !Database (encryption / decryption)
+// It will encrypt whenever we call (save()) in signup post method
+// And it will decrypt wheneve we call (find()) in login post method
+const secret = "Thisisourlittlesecret.";
+userSchema.plugin(encrypt, { secret: secret, encryptedFields: ["password"] });
 
 const User = new mongoose.model("User", userSchema);
 

@@ -1,3 +1,4 @@
+// !Environment Variables
 require("dotenv").config();
 const express = require("express");
 const app = express();
@@ -5,6 +6,7 @@ const port = 3000;
 
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const encrypt = require("mongoose-encryption");
 
 mongoose.connect(process.env.MONGOOSE_SERVER);
 
@@ -13,6 +15,9 @@ const userSchema = new mongoose.Schema({
   email: String,
   password: String,
 });
+
+const secret = process.env.SECRET_KEY;
+userSchema.plugin(encrypt, { secret: secret, encryptedFields: ["password"] });
 
 const User = new mongoose.model("User", userSchema);
 
