@@ -6,8 +6,9 @@ const port = 3000;
 
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-// !Hashing password
-const md5 = require("md5");
+// !Salting password
+const bcrypt = require("bcrypt");
+const saltRounds = 10;
 
 mongoose.connect(process.env.MONGOOSE_SERVER);
 
@@ -39,39 +40,41 @@ app.get("/login", function (req, res) {
 app.post("/signup", function (req, res) {
   const fullname = req.body.fullname;
   const email = req.body.email;
-  // !Generate hash password
-  const password = md5(req.body.password);
+  const password = req.body.password;
 
-  const newUser = new User({
-    name: fullname,
-    email: email,
-    password: password,
-  });
+  // !Salting and Hashing
+  bcrypt.hash(password, saltRounds, function (err, hash) {
+    const newUser = new User({
+      name: fullname,
+      email: email,
+      password: hash,
+    });
 
-  newUser.save(function (err) {
-    if (!err) {
-      res.render("secrets");
-    } else {
-      console.log(err);
-    }
+    newUser.save(function (err) {
+      if (!err) {
+        res.render("secrets");
+      } else {
+        console.log(err);
+      }
+    });
   });
 });
 
 app.post("/login", function (req, res) {
   const email = req.body.email;
-  // !Generate hash password
-  const password = md5(req.body.password);
+  const password = req.body.password;
 
   User.findOne({ email: email }, function (err, foundUser) {
     if (!err) {
       if (foundUser) {
-        console.log(email);
-        console.log(foundUser);
-        if (foundUser.password === password) {
-          res.render("secrets");
-        } else {
-          console.log("Incorrect email or password");
-        }
+        // !Comparing user password from salted and hashed password
+        bcrypt.compare(password, foundUser.password, function (err, result) {
+          if (result === true) {
+            res.render("secrets");
+          } else {
+            console.log("Incorrect email or password");
+          }
+        });
       } else {
         console.log("Incorrect email or password");
       }
