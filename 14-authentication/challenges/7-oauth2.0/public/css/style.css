@@ -1,8 +1,40 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
 *:focus {
   outline: none;
 }
 
 html {
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  color: #8fa2b8;
+}
+
+input {
+  color: #ffffff;
+  width: 100%;
+  padding: 0.5rem;
+  background-color: transparent;
+  border-bottom: 1px solid #8fa2b8;
+}
+
+input:focus {
+  outline: none;
+}
+
+main {
+  position: relative;
+}
+
+.wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+
   background-image: linear-gradient(
     to right bottom,
     #2c3c77,
@@ -18,25 +50,8 @@ html {
     #41233c,
     #4b243d
   );
-}
 
-body {
-  color: #8fa2b8;
-}
-
-main {
-}
-
-input {
-  color: #ffffff;
-  width: 100%;
-  padding: 0.5rem;
-  background-color: transparent;
-  border-bottom: 1px solid #8fa2b8;
-}
-
-input:focus {
-  outline: none;
+  z-index: -1;
 }
 
 /* HOME */
