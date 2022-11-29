@@ -37,6 +37,8 @@ const userSchema = new mongoose.Schema({
   name: String,
   username: String,
   password: String,
+  googleId: String,
+  secrets: [String],
 });
 
 userSchema.plugin(passportLocalMongoose);
@@ -53,8 +55,10 @@ passport.serializeUser(function (user, done) {
   done(null, user);
 });
 
-passport.deserializeUser(function (user, done) {
-  done(null, user);
+passport.deserializeUser(function (id, done) {
+  User.findById(id, function (err, user) {
+    done(err, user);
+  });
 });
 
 // !Google OAuth 2.0
@@ -79,7 +83,19 @@ passport.use(
 );
 
 app.get("/", function (req, res) {
-  res.render("home");
+  if (req.isAuthenticated()) {
+    User.find({ secret: { $ne: null } }, function (err, foundUsers) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUsers) {
+          res.render("secrets", { usersWithSecrets: foundUsers });
+        }
+      }
+    });
+  } else {
+    res.render("home");
+  }
 });
 
 // !Google  Sign Up Prompt
@@ -107,7 +123,23 @@ app.get("/login", function (req, res) {
 
 app.get("/secrets", function (req, res) {
   if (req.isAuthenticated()) {
-    res.render("secrets");
+    User.find({ secret: { $ne: null } }, function (err, foundUsers) {
+      if (err) {
+        console.log(err);
+      } else {
+        if (foundUsers) {
+          res.render("secrets", { usersWithSecrets: foundUsers });
+        }
+      }
+    });
+  } else {
+    res.redirect("/login");
+  }
+});
+
+app.get("/submit", function (req, res) {
+  if (req.isAuthenticated()) {
+    res.render("submit");
   } else {
     res.redirect("/login");
   }
@@ -141,6 +173,29 @@ app.post("/signup", function (req, res) {
       }
     }
   );
+});
+
+app.post("/submit", function (req, res) {
+  const submittedSecret = req.body.secret;
+
+  //Once the user is authenticated and their session gets saved, their user details are saved to req.user.
+
+  // !(req.user) is getting all database from current (User)
+  // console.log(req.user.id);
+
+  // !(req.user.id) find the current user id from our (Model / Collections) then we pass the new data from our (input) then save it to our database
+  User.findById(req.user.id, function (err, foundUser) {
+    if (err) {
+      console.log(err);
+    } else {
+      if (foundUser) {
+        foundUser.secrets.push(submittedSecret);
+        foundUser.save(function () {
+          res.redirect("/secrets");
+        });
+      }
+    }
+  });
 });
 
 app.post("/login", function (req, res) {
